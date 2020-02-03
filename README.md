@@ -2,7 +2,6 @@
 
 A few utility functions designed to facilitate the checking of types against type traits.
 
-
 **Before:**
 ```c++
 template <typename... Ts> constexpr auto const all_or_none_integral_v = false;
@@ -18,9 +17,7 @@ template <typename... Ts>
     requires check_f<noneall, std::is_integral, std::remove_reference_t, Ts...>()
 constexpr auto const all_or_none_integral_v<Ts...> = true;
 ```
-
-
-**More exemples:**
+<br>**More exemples:**
 
 *All same types (regardless of cvref)*
 ```c++

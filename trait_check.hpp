@@ -57,10 +57,6 @@ template <TmplTsT Trait, typename... Args> requires (is_qualified_v<Args> or ...
 constexpr auto check_unq_f() noexcept { return check_f<Trait, unqualify, Args...>(); }
 
 //-----------------
-struct only_default final { constexpr only_default() noexcept = default; template <typename... Ts> constexpr only_default(Ts...) noexcept = delete; };
-template <only_default = only_default{}> constexpr bool const always_false = false;
-
-
 template <TmplTsT Junction, TmplTsT Trait, TmplTT QualifOp, typename... Args>
 constexpr auto check_f() noexcept
 {
